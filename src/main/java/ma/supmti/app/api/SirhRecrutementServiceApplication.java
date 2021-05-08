@@ -7,11 +7,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableEurekaClient
+@EnableEurekaClient 
 public class SirhRecrutementServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SirhRecrutementServiceApplication.class, args);
 	}
 
+ 
 }
