@@ -16,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,6 +33,12 @@ public class CandidatEntity implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_candidat", nullable = false)
 	private Long idCandidat;
+	
+	@Column(name = "username", nullable = false, length = 255)
+	private String username;
+
+	@Column(name = "password", nullable = false, length = 255)
+	private String password;
 	
 	@Column(name = "nom", nullable = false)
 	private String nom;
@@ -81,13 +88,21 @@ public class CandidatEntity implements java.io.Serializable {
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "candidat")
 	private List<LangueEntity> langues = new ArrayList<>();
 	
-	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "candidat")
-	private List<SourceEntity> sources = new ArrayList<>();
-	
+	@ManyToOne
+	@JoinColumn(name = "id_source")
+	private CandidatEntity source;
+
+
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "candidat")
 	private List<NiveauEtudeEntity> niveau = new ArrayList<>();
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "possede", joinColumns = @JoinColumn(name = "idcandidat"), inverseJoinColumns = @JoinColumn(name = "idCompetence"))
 	private List<CompetenceEntity> roles = new ArrayList<>();
+
+	@OneToOne
+	@JoinColumn(name = "idAdresse")
+	private AdresseEntity adresse;
+
+	
 }
