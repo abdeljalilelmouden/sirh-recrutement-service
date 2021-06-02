@@ -45,7 +45,7 @@ public class CandidatService implements ICandidatService {
 	public CandidatEntity findCandidatByUsername(String username) {
 		CandidatEntity user = null;
 		try {
-			user = candidatRepository.findUserByUsername(username);
+			//user = candidatRepository.findUserByUsername(username);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 
 @Data @AllArgsConstructor @NoArgsConstructor
 @Entity
-@Table(name = "projet")
+@Table(name = "source")
 public class SourceEntity implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;

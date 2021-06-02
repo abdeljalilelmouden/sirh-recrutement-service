@@ -88,11 +88,14 @@ public class CandidatEntity implements java.io.Serializable {
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "candidat")
 	private List<LangueEntity> langues = new ArrayList<>();
 	
-	@ManyToOne
+	
+	@OneToOne
 	@JoinColumn(name = "id_source")
 	private CandidatEntity source;
 
-
+	@OneToOne
+	@JoinColumn(name = "id_villes")
+	private CandidatEntity villes;
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "candidat")
 	private List<NiveauEtudeEntity> niveau = new ArrayList<>();
 	
@@ -100,9 +103,7 @@ public class CandidatEntity implements java.io.Serializable {
 	@JoinTable(name = "possede", joinColumns = @JoinColumn(name = "idcandidat"), inverseJoinColumns = @JoinColumn(name = "idCompetence"))
 	private List<CompetenceEntity> roles = new ArrayList<>();
 
-	@OneToOne
-	@JoinColumn(name = "idAdresse")
-	private AdresseEntity adresse;
+
 
 	
 }

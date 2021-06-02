@@ -40,12 +40,12 @@ public class FormationDto {
 			formationDto = new FormationDto();
 			formationDto.setIdFormation(formationEntity.getIdFormation());
 			formationDto.setNomFormation(formationEntity.getNomFormation());
-			formationDto.setCandidat(formationEntity.getCandidat());
+			//formationDto.setCandidat(formationEntity.getCandidat());
 		}
 		return formationDto;
 	
 	}
-	public static FormationEntity dtoToEntity(FormationDto formationDto) {
+	public static FormationEntity dtoToEntity(FormationEntity formationDto) {
 		FormationEntity formationEntity = new FormationEntity();
 		if (formationDto != null) {
 			formationEntity.setIdFormation(formationDto.getIdFormation());
@@ -67,10 +67,10 @@ public class FormationDto {
 		return listFormationDto;
 	}
 	
-	public static List<FormationEntity> dtosToEntites(List<FormationDto> listFormationDto) {
+	public static List<FormationEntity> dtosToEntites(List<FormationEntity> listFormationDto) {
 		List<FormationEntity> listFormationEntity = new ArrayList<>();
 		if (!CollectionUtils.isEmpty(listFormationDto)) {
-			for (FormationDto formationDto : listFormationDto) {
+			for (FormationEntity formationDto : listFormationDto) {
 				listFormationEntity.add(dtoToEntity(formationDto));
 			}
 		}

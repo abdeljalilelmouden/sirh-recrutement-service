@@ -11,6 +11,8 @@ import ma.supmti.app.api.entity.CandidatEntity;
 @Repository
 public interface ICandidatRepository extends JpaRepository<CandidatEntity, Long> {
 
-	@Query("SELECT u FROM CollaborateurEntity u  WHERE u.username = :username")
+	
+	@Query("SELECT u FROM CandidatEntity u  WHERE u.username = :username")
 	CandidatEntity findUserByUsername(@Param("username") String username);
+	 
 }

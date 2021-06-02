@@ -44,7 +44,7 @@ public class LangueDto {
 		return langueDto;
 	
 	}
-	public static LangueEntity dtoToEntity(LangueDto langueDto) {
+	public static LangueEntity dtoToEntity(LangueEntity langueDto) {
 		LangueEntity langueEntity = new LangueEntity();
 		if (langueDto != null) {
 			langueEntity.setIdLangue(langueDto.getIdLangue());
@@ -66,10 +66,10 @@ public class LangueDto {
 		return listLangueDto;
 	}
 	
-	public static List<LangueEntity> dtosToEntites(List<LangueDto> listLangueDto) {
+	public static List<LangueEntity> dtosToEntites(List<LangueEntity> listLangueDto) {
 		List<LangueEntity> listLangueEntity = new ArrayList<>();
 		if (!CollectionUtils.isEmpty(listLangueDto)) {
-			for (LangueDto langueDto : listLangueDto) {
+			for (LangueEntity langueDto : listLangueDto) {
 				listLangueEntity.add(dtoToEntity(langueDto));
 			}
 		}

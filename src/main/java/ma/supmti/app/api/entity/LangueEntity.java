@@ -26,13 +26,13 @@ public class LangueEntity implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_langue", nullable = false)
+	@Column(name = "idLangue", nullable = false)
 	private Long idLangue;
 	
-	@Column(name = "langue", nullable = false)
+	@Column(name = "langue")
 	private String langue;
 	
-	@Column(name = "niveau", nullable = false)
+	@Column(name = "niveau")
 	private String niveau;
 
 	@ManyToOne
